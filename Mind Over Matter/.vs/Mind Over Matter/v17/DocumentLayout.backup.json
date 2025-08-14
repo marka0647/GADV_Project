@@ -1,0 +1,197 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\game\\assets\\scripts\\playeralt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\playeralt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|c:\\github\\gadv\\gadv_project\\mind over matter\\assets\\game\\assets\\scripts\\ground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\ground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|c:\\github\\gadv\\gadv_project\\mind over matter\\assets\\game\\assets\\scripts\\quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\quizmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fawaa\\Downloads\\QuizManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\game\\assets\\scripts\\racehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\racehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\game\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\game\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\scripts\\followplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\followplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fawaa\\AppData\\Local\\Temp\\348026e0-7bb0-4a44-be9a-4f45236272ce_unity-dino-game-tutorial-main.zip.2ce\\unity-dino-game-tutorial-main\\.vscode\\launch.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\assets\\scripts\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F54C45A3-FF89-9FA4-8EC5-1466062027E5}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ground.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\Ground.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\Ground.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\Ground.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\Ground.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T09:28:50.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuizManager.cs",
+              "DocumentMoniker": "C:\\Users\\fawaa\\Downloads\\QuizManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\fawaa\\Downloads\\QuizManager.cs",
+              "ToolTip": "C:\\Users\\fawaa\\Downloads\\QuizManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\fawaa\\Downloads\\QuizManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T09:03:32.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RaceHUD.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\RaceHUD.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\RaceHUD.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\RaceHUD.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\RaceHUD.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T04:54:36.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAQwHcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:11:27.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerAlt.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\PlayerAlt.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\PlayerAlt.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\PlayerAlt.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\PlayerAlt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:44:51.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuizManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\QuizManager.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\QuizManager.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\QuizManager.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\QuizManager.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:19:37.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\game\\Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\game\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\game\\Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:05:40.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launch.json",
+              "DocumentMoniker": "C:\\Users\\fawaa\\AppData\\Local\\Temp\\348026e0-7bb0-4a44-be9a-4f45236272ce_unity-dino-game-tutorial-main.zip.2ce\\unity-dino-game-tutorial-main\\.vscode\\launch.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\fawaa\\AppData\\Local\\Temp\\348026e0-7bb0-4a44-be9a-4f45236272ce_unity-dino-game-tutorial-main.zip.2ce\\unity-dino-game-tutorial-main\\.vscode\\launch.json",
+              "ToolTip": "C:\\Users\\fawaa\\AppData\\Local\\Temp\\348026e0-7bb0-4a44-be9a-4f45236272ce_unity-dino-game-tutorial-main.zip.2ce\\unity-dino-game-tutorial-main\\.vscode\\launch.json",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\fawaa\\AppData\\Local\\Temp\\348026e0-7bb0-4a44-be9a-4f45236272ce_unity-dino-game-tutorial-main.zip.2ce\\unity-dino-game-tutorial-main\\.vscode\\launch.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-31T06:02:45.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FollowPlayer.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\FollowPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FollowPlayer.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\FollowPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FollowPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T04:52:14.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T15:28:02.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QuestionManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\QuestionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\QuestionManager.cs",
+              "ToolTip": "C:\\GitHub\\GADV\\GADV_Project\\Mind Over Matter\\Assets\\Scripts\\QuestionManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\QuestionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T15:14:11.378Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
