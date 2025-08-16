@@ -1,68 +1,73 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerAlt : MonoBehaviour
 {
     private CharacterController character;
-    private Vector3 direction;
+    private Vector3 velocity;
+    private readonly Stack<float> speedBoosts = new Stack<float>();
 
-    public float defaultSpeed = 5f;
-    public float currentSpeed;
-    public float speedIncrement = 2f;
+    [Header("Run Speed")]
+    [SerializeField] private float baseRunSpeed = 5f;   // starting speed
+    [SerializeField] private float maxRunSpeed = 15f;   // cap the total speed
+    private float currentRunSpeed;
 
+    [Header("Physics")]
     public float gravity = 9.81f * 2f;
-
-    private int correctAnswerStreak = 0;
 
     private void Awake()
     {
         character = GetComponent<CharacterController>();
-        currentSpeed = defaultSpeed;
     }
 
     private void OnEnable()
     {
-        direction = Vector3.zero;
-        currentSpeed = defaultSpeed;
-        correctAnswerStreak = 0;
+        velocity = Vector3.zero;
+        currentRunSpeed = baseRunSpeed;   // start running immediately
     }
 
     private void Update()
     {
-        direction += gravity * Time.deltaTime * Vector3.down;
+        // Horizontal auto-run
+        Vector3 run = Vector3.right * currentRunSpeed;
 
-        if (character.isGrounded)
-        {
-            direction = Vector3.down;
+        // Simple gravity so the controller stays grounded
+        velocity += gravity * Time.deltaTime * Vector3.down;
+        if (character.isGrounded) velocity = Vector3.down;
 
-        }
-
-        direction.x = currentSpeed;
-        character.Move(direction * Time.deltaTime);
+        // Move: run + gravity
+        character.Move((run + velocity) * Time.deltaTime);
     }
 
-    // Call this method from QuizManager when the answer is correct
-    public void CorrectAnswer()
+    public void LoseOneStackSpeed()
     {
-        correctAnswerStreak++;
-        if (correctAnswerStreak <= 3)
+        if (speedBoosts.Count > 0)
         {
-            currentSpeed += speedIncrement;
+            float last = speedBoosts.Pop();               // undo the last applied boost
+            currentRunSpeed = Mathf.Clamp(currentRunSpeed - last, baseRunSpeed, maxRunSpeed);
         }
     }
 
-    // Call this method from QuizManager when the answer is wrong
-    public void WrongAnswer()
+    // Called by QuizManager to make the player faster
+    public void AddSpeed(float delta)
     {
-        correctAnswerStreak = 0;
-        currentSpeed = defaultSpeed;
+        // Clamp so we never go below baseRunSpeed, and never above maxRunSpeed
+        float oldSpeed = currentRunSpeed;
+        float newSpeed = Mathf.Clamp(currentRunSpeed + delta, baseRunSpeed, maxRunSpeed);
+
+        // Record only the actual positive increment applied (after clamping)
+        float applied = newSpeed - oldSpeed;
+        if (applied > 0f)
+            speedBoosts.Push(applied);
+
+        currentRunSpeed = newSpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    // Optional helper if you want to set speed directly somewhere
+    public void SetSpeed(float newSpeed)
     {
-        if (other.CompareTag("Obstacle"))
-        {
-            GameManager.Instance.GameOver();
-        }
+        currentRunSpeed = Mathf.Clamp(newSpeed, 0f, maxRunSpeed);
     }
 }

@@ -5,9 +5,9 @@ using TMPro;
 public class RaceHUD : MonoBehaviour
 {
     [Header("UI References")]
-    [SerializeField] private TMP_Text distanceText; // shows "123 m"
-    [SerializeField] private TMP_Text timerText;    // shows "MM:SS"
-    [SerializeField] private Image stackFill;       // Image type = Filled (Horizontal)
+    [SerializeField] private TMP_Text distanceText; // e.g. "123 m"
+    [SerializeField] private TMP_Text timerText;    // e.g. "MM:SS"
+    [SerializeField] private Image stackFill;       // Image Type = Filled (Horizontal)
     [SerializeField] private TMP_Text stackLabel;   // optional "2/3"
 
     void Update()
@@ -15,17 +15,17 @@ public class RaceHUD : MonoBehaviour
         var gm = GameManager.Instance;
         if (gm == null) return;
 
-        // Distance (integer meters)
-        int meters = Mathf.FloorToInt(gm.DistanceMeters);
-        distanceText.text = meters + " m";
+        // Distance (effective: base constant rate + nudges)
+        int meters = Mathf.FloorToInt(gm.EffectiveDistanceMeters);
+        if (distanceText) distanceText.text = meters + " m";
 
-        // Timer MM:SS
+        // Global timer MM:SS
         float t = gm.ElapsedSeconds;
         int minutes = (int)(t / 60f);
         int seconds = (int)(t % 60f);
-        timerText.text = $"{minutes:00}:{seconds:00}";
+        if (timerText) timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        // Stacks bar fill (0..1)
+        // Stacks bar fill
         if (stackFill)
         {
             float fill = gm.MaxSpeedStacks > 0
@@ -35,7 +35,9 @@ public class RaceHUD : MonoBehaviour
         }
 
         if (stackLabel)
-            stackLabel.text = $"{gm.CurrentStacks}/{gm.MaxSpeedStacks}";
+        {
+            stackLabel.text = gm.CurrentStacks + "/" + gm.MaxSpeedStacks;
+        }
     }
 }
 

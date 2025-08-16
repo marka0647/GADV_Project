@@ -1,173 +1,136 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public float initialGameSpeed = 5f;
-    public float gameSpeedIncrease = 0.1f;
-    public float gameSpeed { get; private set; }
+    [Header("Background Scroll")]
+    [SerializeField] private float initialGameSpeed = 5f;
+    public float gameSpeed { get; private set; } // Ground reads this
 
-    //[SerializeField] private TextMeshProUGUI scoreText;
-    //[SerializeField] private TextMeshProUGUI hiscoreText;
-    //[SerializeField] private TextMeshProUGUI gameOverText;
-    //[SerializeField] private Button retryButton;
+    [Header("Player")]
+    [SerializeField] private PlayerAlt player;
 
-    private PlayerAlt player;
-
-    private float score;
-
+    [Header("Stacks")]
     [SerializeField] private int maxSpeedStacks = 3;
-    [SerializeField] private float speedPerStack = 2f;   // tweak in Inspector
     private int currentStacks = 0;
+    public int CurrentStacks => currentStacks;
+    public int MaxSpeedStacks => maxSpeedStacks;
 
-    // ---- Race / HUD data ----
-    [SerializeField] private float targetDistanceMeters = 1000f;
-    [SerializeField] private float distancePerSpeedUnit = 1f; // meters per (gameSpeed unit) per second
+    [Header("Race Distance / Timing")]
+    [SerializeField] private float targetDistanceMeters = 500f;          // finish line
+    [SerializeField] private float metersPerUnit = 1f;
 
+    // internal tracker
+    private float lastPlayerX = 0f;
+
+    // Expose distance (for HUD)
     public float DistanceMeters { get; private set; }
+    public float EffectiveDistanceMeters => DistanceMeters; // compatibility, if HUD uses this
+
+    // Exposed for HUD
     public float ElapsedSeconds { get; private set; }
-
-    // Expose read-only for HUD:
-    public int CurrentStacks => currentStacks;         // you already have currentStacks private
-    public int MaxSpeedStacks => maxSpeedStacks;       // idem
-    public float CurrentSpeed => gameSpeed;            // read current game speed
-
-
-    private void RecomputeSpeed()
-    {
-        // Base speed + stacks, never below default
-        gameSpeed = initialGameSpeed + currentStacks * speedPerStack;
-    }
-
+    public float CurrentSpeed => gameSpeed;
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            DestroyImmediate(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+        if (Instance != null) { DestroyImmediate(gameObject); return; }
+        Instance = this;
     }
 
     private void OnDestroy()
     {
-        if (Instance == this)
-        {
-            Instance = null;
-        }
+        if (Instance == this) Instance = null;
     }
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerAlt>();
-
-
+        if (player == null) player = FindFirstObjectByType<PlayerAlt>();
+        if (player == null)
+        {
+            Debug.LogError("GameManager: No PlayerAlt found in the scene. Please assign a PlayerAlt instance.");
+            enabled = false; // disable manager if no player
+            return;
+        }
         NewGame();
     }
 
     public void NewGame()
     {
-        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
 
-        foreach (var obstacle in obstacles)
-        {
-            Destroy(obstacle.gameObject);
-        }
+        currentStacks = 0;
+        RecomputeSpeed(); // fixed scroll speed
 
-        score = 0f;
-        currentStacks = 0;          // <-- reset stacks
-        RecomputeSpeed();           // <-- sets gameSpeed from stacks
-        enabled = true;
-
-        DistanceMeters = 0f;
         ElapsedSeconds = 0f;
-
-        currentStacks = 0;     // keep your stack reset here
-        RecomputeSpeed();      // your helper that sets gameSpeed from stacks
+        DistanceMeters = 0f;
+        if (player != null)
+            lastPlayerX = player.transform.position.x;
 
         enabled = true;
-        if (player != null) player.gameObject.SetActive(true);
-
-        player.gameObject.SetActive(true);
-
+        if (player) player.gameObject.SetActive(true);
     }
 
     public void GameOver()
     {
-        gameSpeed = 0f;
+        gameSpeed = 0f; // stop scrolling on game over
         enabled = false;
-
-        player.gameObject.SetActive(false);
-
+        if (player) player.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-
-        //gameSpeed += gameSpeedIncrease * Time.deltaTime;
+        // No auto speed ramp. gameSpeed stays constant.
         ElapsedSeconds += Time.deltaTime;
 
-        // Distance: correlate to speed
-        if (DistanceMeters < targetDistanceMeters)
+        if (player != null)
         {
-            DistanceMeters += CurrentSpeed * (distancePerSpeedUnit * 0.8f) * Time.deltaTime;
+            float currentX = player.transform.position.x;
+            float dx = currentX - lastPlayerX;
 
-            if (DistanceMeters >= targetDistanceMeters)
-            {
-                DistanceMeters = targetDistanceMeters;
-                RaceComplete(); // define below (or call your existing finish/gameover)
-            }
+            // Count only forward progress (ignore backward nudges)
+            if (dx > 0f)
+                DistanceMeters += dx * metersPerUnit;
+
+            lastPlayerX = currentX;
         }
 
-    }
-    private void RaceComplete()
-    {
-        // Stop advancing; you can call GameOver() or show finish UI here.
-        enabled = false;
-    }
-
-    public void SetGameSpeed(float value)
-    {
-        gameSpeed = Mathf.Max(0f, value);
+        // Finish check (if you have a target distance)
+        if (DistanceMeters >= targetDistanceMeters)
+        {
+            DistanceMeters = targetDistanceMeters;
+            // your finish logic (e.g., stop, show results, etc.)
+        }
     }
 
-    public void AddGameSpeed(float delta)
-    {
-        gameSpeed = Mathf.Max(0f, gameSpeed + delta);
-    }
-    public void AddSpeedOnCorrect(float amount)
-    {
-        gameSpeed = Mathf.Max(0f, gameSpeed + amount);
-    }
-
-    public void ResetSpeedToDefault()
-    {
-        gameSpeed = initialGameSpeed;
-    }
-    public void OnAnswerCorrect()
+    public bool OnAnswerCorrect()
     {
         if (currentStacks < maxSpeedStacks)
+        {
             currentStacks++;
-        RecomputeSpeed();           // at max: speed is maintained
+            return true;   // stack went up -> do your +1.5 move
+        }
+        return false;      // already at max -> no move
+
     }
 
-    public void OnAnswerWrong()
+    public bool OnAnswerWrong()
     {
         if (currentStacks > 0)
-            currentStacks--;        // never below 0 stacks
-        RecomputeSpeed();           // cannot go below initialGameSpeed
+        {
+            currentStacks--;
+            if (player != null) player.LoseOneStackSpeed();  // <- undo one boost
+            return true;                                     // stack went down
+        }
+        return false;
     }
 
-    public float GetPlayerDistance()
+    private void RecomputeSpeed()
     {
-        return DistanceMeters;
+        // Fixed ground scroll for the entire game.
+        gameSpeed = initialGameSpeed;
     }
 }
+
+
 
